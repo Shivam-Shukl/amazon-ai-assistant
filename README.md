@@ -52,11 +52,11 @@ flowchart LR
 Amazon_Ecommerce_Agent/
 │
 ├── data/
-│   ├── raw/                       # Original scraped data
-│   ├── processed/                 # Cleaned/preprocessed dataset
-│   └── products.csv               # Final dataset for embeddings
+│   ├── raw/                       # Original scraped data (not included - see Setup)
+│   ├── processed/                 # Cleaned/preprocessed dataset (not included - see Setup)
+│   └── products.csv               # Final dataset for embeddings (not included - see Setup)
 │
-├── vectorstore/
+├── vectorstore/                   # Vector index (not included due to size - see Setup)
 │   ├── index/                     # Vector index data
 │   └── chroma.sqlite3             # Persistent ChromaDB database
 │
@@ -77,6 +77,8 @@ Amazon_Ecommerce_Agent/
 ├── LICENSE                        # MIT License
 └── README.md                      # Project documentation
 ```
+
+> **📌 Note:** Due to GitHub file size restrictions, `data/raw/`, `data/processed/`, and `vectorstore/` directories are not included in this repository. See [Setup & Installation](#-setup--installation) for instructions on obtaining these files.
 
 ---
 
@@ -128,9 +130,32 @@ pip install -r requirements.txt
 
 ### Step 4: Prepare Dataset
 
-Ensure your dataset is located at:
+⚠️ **Important Note on Data Files:**
+
+Due to GitHub size limits, the following directories are not included in this repository:
+- `data/raw/` - Raw scraped Amazon data
+- `data/processed/` - Processed dataset (`products.csv`)
+- `vectorstore/` - Pre-built vector embeddings and ChromaDB database
+
+**Option 1: Download Original Dataset**
+```bash
+# Download from Kaggle
+# Source: https://www.kaggle.com/datasets/lokeshparab/amazon-products-dataset
+# Place downloaded files in data/raw/
 ```
-data/processed/products.csv
+
+**Option 2: Request Processed Files**
+
+📧 If you need the processed dataset or pre-built vector store, please contact me. I can share these files via Google Drive or alternative platforms.
+
+**Option 3: Process Data Yourself**
+
+After downloading the raw dataset from Kaggle:
+1. Place files in `data/raw/`
+2. Run the preprocessing notebooks in order:
+```bash
+jupyter notebook notebooks/01_data_exploration.ipynb
+jupyter notebook notebooks/02_building_vectorstore.ipynb
 ```
 
 ### Step 5: Build Vector Store
@@ -370,10 +395,16 @@ Free for educational, research, and commercial use.
 **Shivam Shukla**  
 *AI/ML Engineer | LLM Systems Developer | RAG Enthusiast*
 
+- 📧 Email: [your.email@example.com]
+- 💼 LinkedIn: [linkedin.com/in/yourprofile]
+- 🐙 GitHub: [@yourusername]
+- 🌐 Portfolio: [yourwebsite.com]
+
 ---
 
 ## 🙏 Acknowledgments
 
+- **Dataset Source:** [Amazon Products Dataset](https://www.kaggle.com/datasets/lokeshparab/amazon-products-dataset) by Lokesh Parab on Kaggle
 - SentenceTransformers team for the embedding models
 - ChromaDB for the vector database
 - Streamlit for the amazing UI framework
@@ -382,9 +413,15 @@ Free for educational, research, and commercial use.
 ---
 
 
+### 📦 Need Data Files?
+
+The processed dataset and vector store files are available upon request due to GitHub size limitations. Contact me via:
+- 📧 Email: [shivamshuklass661@gmail.com]
 
 
-If you find this project helpful, please consider giving it a star! ⭐
+I'll share these files via Google Drive, Dropbox, or similar platforms.
+
+---
 
 
 ---
